@@ -1,0 +1,41 @@
+# xterm-256color
+attrcolor b ".I"
+termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce "on"
+
+# <88>C<87> äencoding GBK UTF-8
+#defencoding utf8
+#encoding big5 utf8
+#defencoding big5
+#encoding utf8 big5
+
+
+# visual bell
+vbell off
+
+autodetach on
+
+startup_message off
+
+# make the shell in every window a login shell
+shell -$SHELL
+
+defscrollback 5000
+
+#remove some stupid / dangerous key bindings
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+bind h
+
+#make them better
+bind 'K' kill
+bind 'I' login on
+bind 'O' login off
+bind '}' history
+
+hardstatus alwayslastline '%{Yk}%-w%{.Yk}%n %t%{-}%+w %=%{.w} %{.Yr}%1` %{.Yb}%2`M %{kY}%C'
+
